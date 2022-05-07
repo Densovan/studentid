@@ -7,12 +7,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Index from "./components/dashboard/index";
 import Login from "./components/login";
 import Users from "./components/users/users";
+import Students from "./components/Students/students";
 import Register from "./components/register";
 import Logout from "./components/logout";
-
+import EditStudent from "./components/Students/editStudent";
 import { UserProvider } from "./contexts/userContext";
 
 import axios from "axios";
+import CreateStudent from "./components/Students/createStudent";
+import DetailStudent from "./components/Students/detailStudent";
 
 axios.defaults.withCredentials = true;
 
@@ -35,7 +38,26 @@ function App() {
             {/* <PrivateRoute exact={true} path="/logout" component={Logout} /> */}
             {/* <PrivateRoute exact={true} path="/" component={Dashboard} /> */}
             <PrivateRoute exact={true} path="/dashboard" component={Index} />
-            <PrivateRoute path="/dashboard/students" component={Users} />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/students"
+              component={Students}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/student/create"
+              component={CreateStudent}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/student/edit/:id"
+              component={EditStudent}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/student/details/:id"
+              component={DetailStudent}
+            />
           </Switch>
         </UserProvider>
       </Router>

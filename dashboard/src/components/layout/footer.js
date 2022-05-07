@@ -5,7 +5,7 @@ const { Footer } = Layout;
 function MyFooter() {
   return (
     <Footer style={{ textAlign: "center" }}>
-      <b>Jabarom</b> © 2022 Build with ❤️ by <b>KOOMPI</b>
+      <b>StudentID System</b> © 2022 Build with ❤️ by <b>KOOMPI</b>
     </Footer>
   );
 }

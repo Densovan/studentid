@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const validateEmail = function (email) {
   var isEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -7,9 +7,12 @@ const validateEmail = function (email) {
 
 const UserSchema = new mongoose.Schema(
   {
+    userId: {
+      type: String,
+    },
     role: {
       type: String,
-      default: 'user',
+      default: "student",
     },
     fullname: {
       type: String,
@@ -22,23 +25,33 @@ const UserSchema = new mongoose.Schema(
       unique: true,
       required: true,
     },
+    gender: {
+      type: String,
+    },
     password: {
       type: String,
       required: true,
-      minlength: 60,
+      // minlength: 60,
     },
     avatar: {
       type: String,
-      default: 'no-user.png',
+      default: "no-user.png",
+    },
+    dob: {
+      type: String,
+    },
+    qr: {
+      type: String,
+      default: "",
     },
     isApproved: {
       type: Boolean,
       default: true,
     },
   },
-  { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
+  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 module.exports = User;

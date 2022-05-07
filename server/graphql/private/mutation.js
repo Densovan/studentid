@@ -67,6 +67,44 @@ const RootMutation = new GraphQLObjectType({
         }
       },
     },
+    create_student: {
+      type: UserType,
+      args: {
+        fullname: { type: new GraphQLNonNull(GraphQLString) },
+        email: { type: new GraphQLNonNull(GraphQLString) },
+        password: { type: new GraphQLNonNull(GraphQLString) },
+        gender: { type: GraphQLString },
+        dob: { type: GraphQLString },
+        qr: { type: GraphQLString },
+        avatar: { type: GraphQLString },
+      },
+      resolve: async (parent, args, context) => {
+        try {
+          // Check Email
+          const isEmail = await User.findOne({ email: args.email });
+          if (isEmail) {
+            throw new Error("An account with this email already exist.");
+          }
+          if (args.password.length < 5) {
+            throw new Error(
+              "The password needs to be at least 5 characters long."
+            );
+          }
+          // Hash the password
+          const saltRounds = 10;
+          const hashPassword = await bcrypt.hash(args.password, saltRounds);
+          const newStudent = new User({
+            ...args,
+            userId: context.id,
+            password: hashPassword,
+          });
+          await newStudent.save();
+          return { message: create("student") };
+        } catch (error) {
+          throw new Error(error);
+        }
+      },
+    },
     login: {
       type: UserType,
       args: {
@@ -102,11 +140,15 @@ const RootMutation = new GraphQLObjectType({
       },
     },
     // ===== User Section =====
-    update_user: {
+    update_student: {
       type: UserType,
       args: {
+        id: { type: GraphQLString },
         fullname: { type: GraphQLString },
         avatar: { type: GraphQLString },
+        gender: { type: GraphQLString },
+        dob: { type: GraphQLString },
+        qr: { type: GraphQLString },
         email: { type: GraphQLString },
         oldPassword: { type: GraphQLString },
         password: { type: GraphQLString },
@@ -145,8 +187,8 @@ const RootMutation = new GraphQLObjectType({
             };
           } else {
             await User.findByIdAndUpdate(
-              { _id: context.id },
-              { ...args, password: user.password }
+              { _id: args.id },
+              { ...args, password: user.password, userId: context.id }
             );
             return {
               message: "The user info update with successfully.",

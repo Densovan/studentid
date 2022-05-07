@@ -28,7 +28,7 @@ router.post("/upload/image", upload.single("thumbnail"), async (req, res) => {
     .toFile("./public/uploads/" + ref);
   return res.json({
     // imageUrl: `https://backend.sdacharn.com/public/uploads/${ref}`,
-    imageUrl: `http://localhost:7001/public/uploads/${ref}`,
+    imageUrl: `http://localhost:9001/public/uploads/${ref}`,
   });
 });
 

@@ -188,8 +188,9 @@
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
   /* background-color: rgba(42, 139, 214, 0.1);
   border-right: 4px solid #2176ff; */
-  background-color: rgba(92, 38, 246, 0.1);
-  border-right: 4px solid #5c26f6;
+  background-color: #262e3c61;
+  color: #fff;
+  border-right: 4px solid #262e3c;
 }
 .ant-menu-item:active,
 .ant-menu-submenu-title:active {
@@ -199,7 +200,8 @@
 .ant-menu-item-selected a,
 .ant-menu-item-selected span,
 .ant-menu-item-selected a:hover {
-  color: #2176ff !important;
+  color: #ffffff !important;
+  font-weight: 400;
 }
 
 .menu-categories {
@@ -484,9 +486,9 @@ tr.drop-over-upward td {
   width: 150px !important;
 }
 .button-submit:hover {
-  background-color: #2176ff;
+  background-color: #333944;
   color: #fff;
-  border-color: #2176ff;
+  border-color: #333944;
 }
 .button-cancel {
   border-radius: 30px !important;
@@ -519,7 +521,7 @@ tr.drop-over-upward td {
 .ant-menu-item:hover,
 .ant-menu-submenu-title:hover,
 .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
-  color: #2176ff !important;
+  color: black !important;
 }
 .add-member-button {
   background-color: rgb(82, 51, 255);
@@ -711,9 +713,9 @@ tr.drop-over-upward td {
   border: 2px solid transparent !important;
   transition: 0.4s;
   width: 200px;
-  background-color: #5c26f6;
-  box-shadow: 0 5px 15px rgba(92, 38, 246, 0.21),
-    0 15px 40px rgba(92, 38, 246, 0.39);
+  background-color: #262e3c;
+  /* box-shadow: 0 5px 15px rgba(92, 38, 246, 0.21),
+    0 15px 40px rgba(92, 38, 246, 0.39); */
   /* background-color: #2176ff;
   box-shadow: 0 5px 15px rgba(0, 129, 255, 0.15),
     0 15px 40px rgba(0, 129, 255, 0.2); */
@@ -722,7 +724,7 @@ tr.drop-over-upward td {
 .ant-btn-primary:focus {
   border: 2px solid transparent !important;
   color: #fff;
-  background-color: #5d26f6d2;
+  background-color: #515762;
   /* background-color: #0554d3; */
 }
 .tag-danger {

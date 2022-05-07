@@ -42,8 +42,8 @@ const SideNavbar = () => {
         <center>
           <div className="logos">
             <NavLink to="/dashboard">
-              {/* <h1 className="jabarom-logo">JabArom</h1> */}
-              <img src={logo} className="vuthy-logo" alt="logo" />
+              <h1 className="jabarom-logo">StudentID</h1>
+              {/* <img src={logo} className="vuthy-logo" alt="logo" /> */}
             </NavLink>
           </div>
         </center>
@@ -63,12 +63,15 @@ const SideNavbar = () => {
           </Menu.Item> */}
 
           <SubMenu key="blog" icon={<FormOutlined />} title="Students">
-            <Menu.Item key="/dashboard/product/add">
-              <NavLink to="/dashboard/product/add">Add Students</NavLink>
+            <Menu.Item key="dashboard/student/create">
+              <NavLink to="dashboard/student/create">Add Students</NavLink>
             </Menu.Item>
             <Menu.Item key="/dashboard/students">
               <NavLink to="/dashboard/students">Students</NavLink>
             </Menu.Item>
+            {/* <Menu.Item key="/dashboard/student/edit/:id">
+              <NavLink to="/dashboard/student/edit/:id">Students</NavLink>
+            </Menu.Item> */}
           </SubMenu>
         </Menu>
       </Sider>
