@@ -1,0 +1,11 @@
+version: "3"
+services:
+  sdacharm_admin:
+    image: node:13
+    container_name: admin.sdacharn.com
+    working_dir: /usr/src/sdacharn
+    volumes:
+      - "./:/usr/src/sdacharn"
+    ports:
+      - "6006:6006"
+    command: "./install-pack.sh"

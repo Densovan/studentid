@@ -1,0 +1,252 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "2000W Mining Power Supply for for 8 GPUs ETH Rig Ethereum Miner, Mining Rig PSU ATX PC Power Supply, 100V-220V PSU with Adapter Cable (Black)",
+      "image": "https://m.media-amazon.com/images/I/71Jfc0Hx0FL._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A086764611CGUABJ0U1O4&url=%2FMining-Supply-Ethereum-100V-220V-Adapter%2Fdp%2FB09PYMQ7N3%2Fref%3Dsr_1_1_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-1-spons%26psc%3D1&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 169.99,
+      "categoryId": 193870011,
+      "reviews": "3",
+      "stars": 5.0,
+      "page": 1
+    },
+    {
+      "id": "2",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 1
+    },
+    {
+      "id": "3",
+      "title": "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PlayStation, & Xbox - 1-Year Rescue Service (STGX2000400)",
+      "image": "https://m.media-amazon.com/images/I/81tjLksKixL._AC_UL320_.jpg",
+      "link": "https://amazon.com/Seagate-Portable-External-Hard-Drive/dp/B07CRG94G3/ref=sr_1_3?qid=1649611464&rnid=16225007011&s=computers-intl-ship&sr=1-3",
+      "price": 99.99,
+      "categoryId": 11036071,
+      "reviews": "189,626",
+      "stars": 4.7,
+      "page": 1
+    },
+    {
+      "id": "4",
+      "title": "WD 14TB Elements Desktop Hard Drive HDD, USB 3.0, Compatible with PC, Mac, PS4 & Xbox - WDBWLG0140HBK-NESN",
+      "image": "https://m.media-amazon.com/images/I/61LoGZq-4NL._AC_UL320_.jpg",
+      "link": "https://amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568/ref=sr_1_4?qid=1649611464&rnid=16225007011&s=computers-intl-ship&sr=1-4",
+      "price": 379.99,
+      "categoryId": 1292110011,
+      "reviews": "18,103",
+      "stars": 4.7,
+      "page": 1
+    },
+    {
+      "id": "5",
+      "title": "SAMSUNG 970 EVO Plus SSD 2TB - M.2 NVMe Interface Internal Solid State Drive with V-NAND Technology (MZ-V7S2T0B/AM)",
+      "image": "https://m.media-amazon.com/images/I/813bvfaxuAL._AC_UL320_.jpg",
+      "link": "https://amazon.com/Samsung-970-EVO-Plus-MZ-V7S2T0B/dp/B07MFZXR1B/ref=sr_1_5?qid=1649611464&rnid=16225007011&s=computers-intl-ship&sr=1-5",
+      "price": 499.99,
+      "categoryId": 1292110011,
+      "reviews": "19,522",
+      "stars": "4.9 out of 5 stars",
+      "page": 1
+    },
+    {
+      "id": "6",
+      "title": "2022-2026 / 5 Year Planner: At a Glance 60 Months Monthly & Weekly Large Schedule Appointment Organizer & Agenda with Projects/Notes/Goals & Checklists for Business & Home in Rose Gold",
+      "image": "https://m.media-amazon.com/images/I/716Y4HzdwQL._AC_UY218_.jpg",
+      "link": "https://amazon.com/2022-2026-Year-Planner-Appointment-Checklists/dp/B09F192S27/ref=sr_1_1?crid=2XGKXZQ1IM8M7&keywords=shelves&qid=1649611084&rnid=283155&s=books&sprefix=shelves%2Cstripbooks-intl-ship%2C698&sr=1-1",
+      "price": 7.99,
+      "categoryId": 1000,
+      "stars": 4.9,
+      "page": 1
+    },
+    {
+      "id": "7",
+      "title": "Becoming a Data Head: How to Think, Speak and Understand Data Science, Statistics and Machine Learning",
+      "image": "https://m.media-amazon.com/images/I/61QvFYU1vfS._AC_UY218_.jpg",
+      "link": "https://amazon.com/Becoming-Data-Head-Understand-Statistics/dp/1119741742/ref=sr_1_2?crid=2XGKXZQ1IM8M7&keywords=shelves&qid=1649611084&rnid=283155&s=books&sprefix=shelves%2Cstripbooks-intl-ship%2C698&sr=1-2",
+      "price": 24.00,
+      "categoryId": 1000,
+      "reviews": "112",
+      "stars": 4.7,
+      "page": 1
+    },
+    {
+      "id": "8",
+      "title": "C++ Primer (5th Edition)",
+      "image": "https://m.media-amazon.com/images/I/71vil4NdEPL._AC_UY218_.jpg",
+      "link": "https://amazon.com/Primer-5th-Stanley-B-Lippman/dp/0321714113/ref=sr_1_3?crid=2XGKXZQ1IM8M7&keywords=shelves&qid=1649611084&rnid=283155&s=books&sprefix=shelves%2Cstripbooks-intl-ship%2C698&sr=1-3",
+      "price": 47.99,
+      "categoryId": 1000,
+      "reviews": "821",
+      "stars": 4.4,
+      "page": 1
+    },
+    {
+      "id": "9",
+      "title": "Testing IT: An Off-the-Shelf Software Testing Process",
+      "image": "https://m.media-amazon.com/images/I/81RBODeC0hL._AC_UY218_.jpg",
+      "link": "https://amazon.com/Testing-Second-Off-Shelf-Software/dp/0521148014/ref=sr_1_4?crid=2XGKXZQ1IM8M7&keywords=shelves&qid=1649611084&rnid=283155&s=books&sprefix=shelves%2Cstripbooks-intl-ship%2C698&sr=1-4",
+      "price": 84.53,
+      "categoryId": 1000,
+      "reviews": "9",
+      "stars": 4.5,
+      "page": 1
+    },
+    {
+      "id": "10",
+      "title": "Continuous Architecture in Practice: Software Architecture in the Age of Agility and DevOps (Addison-Wesley Signature Series (Vernon))",
+      "image": "https://m.media-amazon.com/images/I/51VnQi66c4L._AC_UY218_.jpg",
+      "link": "https://amazon.com/Continuous-Architecture-Practice-Addison-Wesley-Signature/dp/0136523560/ref=sr_1_5?crid=2XGKXZQ1IM8M7&keywords=shelves&qid=1649611084&rnid=283155&s=books&sprefix=shelves%2Cstripbooks-intl-ship%2C698&sr=1-5",
+      "price": 44.99,
+      "categoryId": 1000,
+      "reviews": "41",
+      "stars": 4.4,
+      "page": 1
+    },
+    {
+      "id": "11",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 1
+    },
+    {
+      "id": "12",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 1
+    },
+    {
+      "id": "13",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 2
+    },
+    {
+      "id": "14",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 2
+    },
+    {
+      "id": "11",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 2
+    },
+    {
+      "id": "12",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 2
+    },
+    {
+      "id": "13",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 2
+    },
+    {
+      "id": "14",
+      "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+      "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+      "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+      "price": 29.99,
+      "categoryId": 193870011,
+      "stars": 5.0,
+      "page": 2
+    },
+  {
+    "id": "15",
+    "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+    "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+    "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+    "price": 29.99,
+    "categoryId": 193870011,
+    "stars": 5.0,
+    "page": 2
+  },
+  {
+    "id": "16",
+    "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+    "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+    "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+    "price": 29.99,
+    "categoryId": 193870011,
+    "stars": 5.0,
+    "page": 2
+  },
+  {
+    "id": "17",
+    "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+    "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+    "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+    "price": 29.99,
+    "categoryId": 193870011,
+    "stars": 5.0,
+    "page": 2
+  },
+  {
+    "id": "18",
+    "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+    "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+    "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+    "price": 29.99,
+    "categoryId": 193870011,
+    "stars": 5.0,
+    "page": 2
+  },
+  {
+    "id": "19",
+    "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+    "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+    "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+    "price": 29.99,
+    "categoryId": 193870011,
+    "stars": 5.0,
+    "page": 2
+  },
+  {
+    "id": "20",
+    "title": "GinTai DC in Charging Power Jack Board Replacement for Lenovo E570 E575 NS-A832 01EP131(with Cable)",
+    "image": "https://m.media-amazon.com/images/I/41iyqF3lE2S._AC_UL320_.jpg",
+    "link": "https://amazon.com/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_browse_computers-intl-ship_sr_pg1_1?ie=UTF8&adId=A081494114Q6CL1LJJVL3&url=%2FGinTai-Charging-Replacement-NS-A832-01EP131%2Fdp%2FB095PGV3NX%2Fref%3Dsr_1_2_sspa%3Fqid%3D1649611464%26rnid%3D16225007011%26s%3Dcomputers-intl-ship%26sr%3D1-2-spons%26psc%3D1%26smid%3DACBK7E4Q0KITZ&qualifier=1649611464&id=3911204255188401&widgetName=sp_atf_browse",
+    "price": 29.99,
+    "categoryId": 193870011,
+    "stars": 5.0,
+    "page": 2
+  }
+  ]
+}
