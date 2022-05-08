@@ -82,5 +82,18 @@ const GET_STUDENT = gql`
     }
   }
 `;
+const DELETE_USER = gql`
+  mutation ($id: String!) {
+    deleteUser(id: $id) {
+      message
+    }
+  }
+`;
 
-export { CREATE_STUDENT, UPDATE_STUDENT, GET_STUDENTS, GET_STUDENT };
+export {
+  CREATE_STUDENT,
+  UPDATE_STUDENT,
+  GET_STUDENTS,
+  GET_STUDENT,
+  DELETE_USER,
+};

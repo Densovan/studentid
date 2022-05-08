@@ -36,7 +36,10 @@ export default function Login() {
         <div className="loginContainer">
           <Spin spinning={loading} tip="Loading ...">
             <div className="background_login">
-              <img className="login-logo" src={logo} alt="jabarom" />
+              {/* <img className="login-logo" src={logo} alt="jabarom" /> */}
+              <center>
+                <h1>StudentID</h1>
+              </center>
             </div>
             <Form
               onFinish={onFinish}

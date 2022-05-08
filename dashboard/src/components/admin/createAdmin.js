@@ -13,14 +13,14 @@ import {
   DatePicker,
 } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { CREATE_STUDENT } from "../../graphql/students";
+import { CREATE_ADMIN } from "../../graphql/admin";
 import { useMutation } from "@apollo/client";
 
 const { RangePicker } = DatePicker;
 const { Content } = Layout;
 const { Option } = Select;
 
-const CreateStudent = () => {
+const CreateAdmin = () => {
   const [form] = Form.useForm();
   const [state, setState] = useState({
     imageUrl: null,
@@ -31,7 +31,7 @@ const CreateStudent = () => {
   function onChange(date, dateString) {
     setDateString(dateString);
   }
-  const [create_student] = useMutation(CREATE_STUDENT);
+  const [create_admin] = useMutation(CREATE_ADMIN);
 
   const handleChange = (info) => {
     if (info.file.status === "uploading") {
@@ -56,21 +56,26 @@ const CreateStudent = () => {
   };
 
   const onFinish = (values) => {
-    create_student({
-      variables: {
-        ...values,
-        dob: values["dob"].format("YYYY-MM-DD"),
-        avatar: `${state.imageUrl === null ? "no-user.png" : state.imageUrl}`,
-      },
-    }).then(async (res) => {
-      if (res.data.create_student.statusCode === "400") {
-        await message.error(res.data.create_student.message, 3);
-      } else {
-        setState({ imageUrl: null });
-        await message.success(res.data.create_student.message, 3);
-        form.resetFields();
-      }
-    });
+    try {
+      create_admin({
+        variables: {
+          ...values,
+          dob: values["dob"].format("YYYY-MM-DD"),
+          avatar: `${state.imageUrl === null ? "no-user.png" : state.imageUrl}`,
+        },
+      }).then(async (res) => {
+        console.log();
+        if (res.data.create_admin.statusCode === "400") {
+          await message.error(res.data.create_admin.message, 3);
+        } else {
+          setState({ imageUrl: null });
+          await message.success(res.data.create_admin.message, 3);
+          form.resetFields();
+        }
+      });
+    } catch (error) {
+      message.error(error.response.data.message);
+    }
   };
   const onGenderChange = (value) => {
     switch (value) {
@@ -97,7 +102,7 @@ const CreateStudent = () => {
     <React.Fragment>
       <Content>
         <div className="contentContainer-width">
-          <h1 className="header-content">Create Student</h1>
+          <h1 className="header-content">Create Admin</h1>
           <Form
             name="basic"
             layout="vertical"
@@ -232,4 +237,4 @@ const CreateStudent = () => {
   );
 };
 
-export default CreateStudent;
+export default CreateAdmin;

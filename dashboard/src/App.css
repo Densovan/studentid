@@ -681,13 +681,18 @@ tr.drop-over-upward td {
 .loginContainer .ant-legacy-form {
   padding: 40px 40px;
 }
+
 .background_login {
-  background-color: #2176ff !important;
+  background-color: #262e3c !important;
   border-radius: 0px;
   border-radius: 8px 8px 0px 0px !important;
-  border-bottom: 2px solid #2176ff;
+  border-bottom: 2px solid black;
   padding: 30px 0px;
 }
+.background_login h1 {
+  color: white;
+}
+
 .login-form {
   padding: 40px;
 }

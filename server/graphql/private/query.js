@@ -26,6 +26,15 @@ const RootQuery = new GraphQLObjectType({
         return User.find({ role: "admin" }).sort({ created_at: -1 });
       },
     },
+    admin: {
+      type: UserType,
+      args: {
+        id: { type: GraphQLString },
+      },
+      resolve(root, args, context) {
+        return User.findById({ _id: args.id });
+      },
+    },
     students: {
       type: new GraphQLList(UserType),
       resolve() {

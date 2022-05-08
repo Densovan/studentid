@@ -1,14 +1,15 @@
 import React from "react";
-import { DELETE_USER, GET_STUDENT } from "../../graphql/students";
+import { DELETE_USER } from "../../graphql/students";
+import { GET_ADMIN } from "../../graphql/admin";
 import { useMutation, useQuery } from "@apollo/client";
 import { useParams } from "react-router";
 import { Layout, Button, Avatar } from "antd";
 
 const { Content } = Layout;
-const DetailStudent = () => {
+const DetailAdmin = () => {
   const { id } = useParams();
   const [deleteUser] = useMutation(DELETE_USER);
-  const { loading, data } = useQuery(GET_STUDENT, {
+  const { loading, data } = useQuery(GET_ADMIN, {
     variables: {
       id,
     },
@@ -16,13 +17,14 @@ const DetailStudent = () => {
   if (loading) {
     return "loading...";
   }
+  console.log(data);
 
-  const { avatar, fullname, email, gender, dob } = data.student;
+  const { avatar, fullname, email, gender, dob, role } = data.admin;
   const DeleteUser = (id) => {
     deleteUser({
       variables: { id },
     }).then((res) => {
-      window.location.replace("/dashboard/students");
+      window.location.replace("/dashboard/admins");
     });
   };
   return (
@@ -51,6 +53,9 @@ const DetailStudent = () => {
           <p>
             gender: <b>{gender}</b>
           </p>
+          <p>
+            Role: <b>{role}</b>
+          </p>
         </div>
       </Content>
       <br />
@@ -61,4 +66,4 @@ const DetailStudent = () => {
   );
 };
 
-export default DetailStudent;
+export default DetailAdmin;

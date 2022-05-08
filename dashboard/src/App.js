@@ -17,6 +17,9 @@ import axios from "axios";
 import CreateStudent from "./components/Students/createStudent";
 import DetailStudent from "./components/Students/detailStudent";
 import Admins from "./components/admin/admins";
+import CreateAdmin from "./components/admin/createAdmin";
+import DetailAdmin from "./components/admin/detailAdmin";
+import EditAdmin from "./components/admin/editAdmin";
 
 axios.defaults.withCredentials = true;
 
@@ -36,7 +39,7 @@ function App() {
             />
 
             {/* ==== Private Route Section ==== */}
-            {/* <PrivateRoute exact={true} path="/logout" component={Logout} /> */}
+            <PrivateRoute exact={true} path="/logout" component={Logout} />
             {/* <PrivateRoute exact={true} path="/" component={Dashboard} /> */}
             <PrivateRoute exact={true} path="/dashboard" component={Index} />
             <PrivateRoute
@@ -63,6 +66,21 @@ function App() {
               exact={true}
               path="/dashboard/admins"
               component={Admins}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/admin/create"
+              component={CreateAdmin}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/admin/details/:id"
+              component={DetailAdmin}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/admin/edit/:id"
+              component={EditAdmin}
             />
           </Switch>
         </UserProvider>

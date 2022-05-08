@@ -3,7 +3,7 @@ import { message } from "antd";
 
 const Logout = () => {
   axios
-    .get(`http://localhost:7001/logout`, {
+    .get(`http://localhost:9001/logout`, {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     })

@@ -12,26 +12,38 @@ import {
   Spin,
   DatePicker,
 } from "antd";
+import moment from "moment";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { CREATE_STUDENT } from "../../graphql/students";
-import { useMutation } from "@apollo/client";
-
+import { UPDATE_ADMIN, GET_ADMIN } from "../../graphql/admin";
+import { useMutation, useQuery } from "@apollo/client";
+import { useParams } from "react-router";
 const { RangePicker } = DatePicker;
 const { Content } = Layout;
 const { Option } = Select;
 
-const CreateStudent = () => {
+const EditAdmin = ({ history }) => {
   const [form] = Form.useForm();
+  const { id } = useParams();
+
   const [state, setState] = useState({
     imageUrl: null,
     loading: false,
   });
   const [dateString, setDateString] = useState("");
-
+  const [update_admin] = useMutation(UPDATE_ADMIN);
+  const { loading, data } = useQuery(GET_ADMIN, {
+    variables: {
+      id,
+    },
+  });
+  if (loading) {
+    return "loading...";
+  }
   function onChange(date, dateString) {
     setDateString(dateString);
   }
-  const [create_student] = useMutation(CREATE_STUDENT);
+
+  const { fullname, email, avatar, gender, dob } = data.admin;
 
   const handleChange = (info) => {
     if (info.file.status === "uploading") {
@@ -56,21 +68,21 @@ const CreateStudent = () => {
   };
 
   const onFinish = (values) => {
-    create_student({
+    update_admin({
       variables: {
+        id: id,
         ...values,
         dob: values["dob"].format("YYYY-MM-DD"),
-        avatar: `${state.imageUrl === null ? "no-user.png" : state.imageUrl}`,
+        avatar: `${state.imageUrl === null ? avatar : state.imageUrl}`,
       },
     }).then(async (res) => {
-      if (res.data.create_student.statusCode === "400") {
-        await message.error(res.data.create_student.message, 3);
-      } else {
-        setState({ imageUrl: null });
-        await message.success(res.data.create_student.message, 3);
-        form.resetFields();
-      }
+      // instanceRef.current.clear();
+      setState({ imageUrl: null });
+      await message.success(res.data.update_admin.message, 3);
+      form.resetFields();
+      history.push("/dashboard/admins");
     });
+    console.log("Success:", values);
   };
   const onGenderChange = (value) => {
     switch (value) {
@@ -97,13 +109,19 @@ const CreateStudent = () => {
     <React.Fragment>
       <Content>
         <div className="contentContainer-width">
-          <h1 className="header-content">Create Student</h1>
+          <h1 className="header-content">Update Infomation Admin</h1>
           <Form
             name="basic"
             layout="vertical"
             size="large"
             onFinish={onFinish}
             form={form}
+            initialValues={{
+              fullname,
+              email,
+              avatar,
+              gender,
+            }}
           >
             <Row gutter={[32, 0]}>
               <Col span={16}>
@@ -158,7 +176,14 @@ const CreateStudent = () => {
                     <Option value="other">other</Option>
                   </Select>
                 </Form.Item>
-                <Form.Item label="Date of Birth" name="dob">
+                {/* <Form.Item name="dob" label="Date Of Birth" {...config}>
+                  <DatePicker />
+                </Form.Item> */}
+                <Form.Item
+                  initialValue={moment(dob)}
+                  label="Date of Birthh"
+                  name="dob"
+                >
                   <DatePicker
                     className="schoolInput"
                     style={{ width: "100%" }}
@@ -167,36 +192,28 @@ const CreateStudent = () => {
                 </Form.Item>
               </Col>
               <Col span={8}>
-                <Form.Item
-                  label="Avatar"
-                  name="avatar"
-                  // rules={[
-                  //   { required: true, message: "Thumbnail is required!" },
-                  // ]}
-                >
+                <Form.Item label="Avatar" name="avatar">
                   <Upload
                     name="thumbnail"
                     listType="picture-card"
                     className="avatar-uploader"
                     showUploadList={false}
-                    // action={`${process.env.REACT_APP_SERVER}/upload/image`}
                     action="http://localhost:9001/upload/image"
                     // beforeUpload={beforeUpload}
                     onChange={handleChange}
                   >
                     {state.imageUrl ? (
                       <img
-                        // src={`${process.env.REACT_APP_SERVER}/public/uploads/${state.imageUrl}`}
-                        // src={`http://localhost:7000/public/uploads/${state.imageUrl}`}
                         src={state.imageUrl}
                         alt="thumbnail"
                         style={{ width: "120px", height: "100px" }}
                       />
                     ) : (
-                      <div>
-                        {state.loading ? <LoadingOutlined /> : <PlusOutlined />}
-                        <div style={{ marginTop: 8 }}>315 × 200</div>
-                      </div>
+                      <img
+                        src={`${avatar}`}
+                        alt="thumbnail"
+                        style={{ width: "120px", height: "100px" }}
+                      />
                     )}
                   </Upload>
                   <div style={{ color: "red", fontSize: "13px" }}>
@@ -232,4 +249,4 @@ const CreateStudent = () => {
   );
 };
 
-export default CreateStudent;
+export default EditAdmin;

@@ -226,11 +226,11 @@ const Admins = () => {
       render: (id) => {
         return (
           <React.Fragment>
-            <Link to={`/dashboard/student/details/${id}`}>
+            <Link to={`/dashboard/admin/details/${id}`}>
               <Tag color="#262e3c">View</Tag>
             </Link>
 
-            <Link to={`/dashboard/student/edit/${id}`}>
+            <Link to={`/dashboard/admin/edit/${id}`}>
               <Tag color="#f16179">Edit</Tag>
             </Link>
           </React.Fragment>
