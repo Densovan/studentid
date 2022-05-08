@@ -5,18 +5,18 @@ import Highlighter from "react-highlight-words";
 // import { Link } from "react-router-dom";
 import { SearchOutlined } from "@ant-design/icons";
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import { GET_STUDENTS } from "../../graphql/students";
+import { GET_ADMINS } from "../../graphql/admin";
 import moment from "moment";
 const { Content } = Layout;
 
-const Users = () => {
+const Admins = () => {
   const [state, setState] = useState({
     searchText: "",
     searchedColumn: "",
   });
   const searchInput = useRef(null);
 
-  const { loading, data, refetch } = useQuery(GET_STUDENTS);
+  const { loading, data, refetch } = useQuery(GET_ADMINS);
 
   if (loading || !data) {
     return (
@@ -146,71 +146,71 @@ const Users = () => {
       key: "email",
       ...getColumnSearchProps("email"),
     },
-    // {
-    //   title: "Role",
-    //   dataIndex: "role",
-    //   key: "role",
-    //   render: (res, data) => {
-    //     const { id, role } = data;
-    //     return (
-    //       <div>
-    //         {role === "admin" && (
-    //           <Tag style={{ cursor: "pointer" }} color="green">
-    //             <Popconfirm
-    //               title="Are you sure to switch this user role?"
-    //               onConfirm={() => {
-    //                 switchRole({ variables: { id, role: "user" } })
-    //                   .then((res) => {
-    //                     if (res.data.switchRole.statusCode === "200") {
-    //                       return message.success(res.data.switchRole.message);
-    //                     } else if (res.data.switchRole.statusCode === "404") {
-    //                       return message.warning(res.data.switchRole.message);
-    //                     }
-    //                     refetch();
-    //                   })
-    //                   .catch((error) => {
-    //                     let err = JSON.parse(JSON.stringify(error));
-    //                     message.error(err.graphQLErrors[0].message);
-    //                   });
-    //               }}
-    //               okText="Yes"
-    //               cancelText="No"
-    //             >
-    //               Admin
-    //             </Popconfirm>
-    //           </Tag>
-    //         )}
-    //         {role === "user" && (
-    //           <Tag style={{ cursor: "pointer" }} color="gold">
-    //             <Popconfirm
-    //               title="Are you sure to switch this user role？"
-    //               onConfirm={() => {
-    //                 switchRole({ variables: { id, role: "admin" } })
-    //                   .then((res) => {
-    //                     message.success(res.data.switchRole.message);
-    //                     refetch();
-    //                   })
-    //                   .catch((error) => {
-    //                     let err = JSON.parse(JSON.stringify(error));
-    //                     message.error(err.graphQLErrors[0].message);
-    //                   });
-    //               }}
-    //               okText="Yes"
-    //               cancelText="No"
-    //             >
-    //               User
-    //             </Popconfirm>
-    //           </Tag>
-    //         )}
-    //         {role === "superadmin" && (
-    //           <Tag style={{ cursor: "pointer" }} color="magenta">
-    //             SuperAdmin
-    //           </Tag>
-    //         )}
-    //       </div>
-    //     );
-    //   },
-    // },
+    {
+      title: "Role",
+      dataIndex: "role",
+      key: "role",
+      //   render: (res, data) => {
+      //     const { id, role } = data;
+      //     return (
+      //       <div>
+      //         {role === "admin" && (
+      //           <Tag style={{ cursor: "pointer" }} color="green">
+      //             <Popconfirm
+      //               title="Are you sure to switch this user role?"
+      //               onConfirm={() => {
+      //                 switchRole({ variables: { id, role: "user" } })
+      //                   .then((res) => {
+      //                     if (res.data.switchRole.statusCode === "200") {
+      //                       return message.success(res.data.switchRole.message);
+      //                     } else if (res.data.switchRole.statusCode === "404") {
+      //                       return message.warning(res.data.switchRole.message);
+      //                     }
+      //                     refetch();
+      //                   })
+      //                   .catch((error) => {
+      //                     let err = JSON.parse(JSON.stringify(error));
+      //                     message.error(err.graphQLErrors[0].message);
+      //                   });
+      //               }}
+      //               okText="Yes"
+      //               cancelText="No"
+      //             >
+      //               Admin
+      //             </Popconfirm>
+      //           </Tag>
+      //         )}
+      //         {role === "user" && (
+      //           <Tag style={{ cursor: "pointer" }} color="gold">
+      //             <Popconfirm
+      //               title="Are you sure to switch this user role？"
+      //               onConfirm={() => {
+      //                 switchRole({ variables: { id, role: "admin" } })
+      //                   .then((res) => {
+      //                     message.success(res.data.switchRole.message);
+      //                     refetch();
+      //                   })
+      //                   .catch((error) => {
+      //                     let err = JSON.parse(JSON.stringify(error));
+      //                     message.error(err.graphQLErrors[0].message);
+      //                   });
+      //               }}
+      //               okText="Yes"
+      //               cancelText="No"
+      //             >
+      //               User
+      //             </Popconfirm>
+      //           </Tag>
+      //         )}
+      //         {role === "superadmin" && (
+      //           <Tag style={{ cursor: "pointer" }} color="magenta">
+      //             SuperAdmin
+      //           </Tag>
+      //         )}
+      //       </div>
+      //     );
+      //   },
+    },
     {
       title: "Joined",
       dataIndex: "created_at",
@@ -243,12 +243,12 @@ const Users = () => {
     <React.Fragment>
       <Content>
         <div>
-          <h1 className="header-content">Users Table</h1>
-          <Table columns={columns} dataSource={data.students} />
+          <h1 className="header-content">Admin Table</h1>
+          <Table columns={columns} dataSource={data.admins} />
         </div>
       </Content>
     </React.Fragment>
   );
 };
 
-export default Users;
+export default Admins;

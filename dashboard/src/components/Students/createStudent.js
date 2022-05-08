@@ -26,7 +26,11 @@ const CreateStudent = () => {
     imageUrl: null,
     loading: false,
   });
+  const [dateString, setDateString] = useState("");
 
+  function onChange(date, dateString) {
+    setDateString(dateString);
+  }
   const [create_student] = useMutation(CREATE_STUDENT);
 
   const handleChange = (info) => {
@@ -55,6 +59,7 @@ const CreateStudent = () => {
     create_student({
       variables: {
         ...values,
+        dob: values["dob"].format("YYYY-MM-DD"),
         avatar: `${state.imageUrl === null ? "no-user.png" : state.imageUrl}`,
       },
     }).then(async (res) => {
@@ -151,8 +156,12 @@ const CreateStudent = () => {
                     <Option value="other">other</Option>
                   </Select>
                 </Form.Item>
-                <Form.Item name="dob" label="Date Of Birth" {...config}>
-                  <DatePicker />
+                <Form.Item label="Date of Birth" name="dob">
+                  <DatePicker
+                    className="schoolInput"
+                    style={{ width: "100%" }}
+                    onChange={onChange}
+                  />
                 </Form.Item>
               </Col>
               <Col span={8}>

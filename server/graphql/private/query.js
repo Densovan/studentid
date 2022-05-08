@@ -20,16 +20,16 @@ const RootQuery = new GraphQLObjectType({
         return User.findById({ _id: context.id });
       },
     },
-    admin: {
+    admins: {
       type: new GraphQLList(UserType),
       resolve() {
-        return User.find({ role: "admin" });
+        return User.find({ role: "admin" }).sort({ created_at: -1 });
       },
     },
     students: {
       type: new GraphQLList(UserType),
       resolve() {
-        return User.find({ role: "student" });
+        return User.find({ role: "student" }).sort({ created_at: -1 });
       },
     },
     student: {

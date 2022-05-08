@@ -16,6 +16,7 @@ import { UserProvider } from "./contexts/userContext";
 import axios from "axios";
 import CreateStudent from "./components/Students/createStudent";
 import DetailStudent from "./components/Students/detailStudent";
+import Admins from "./components/admin/admins";
 
 axios.defaults.withCredentials = true;
 
@@ -57,6 +58,11 @@ function App() {
               exact={true}
               path="/dashboard/student/details/:id"
               component={DetailStudent}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/dashboard/admins"
+              component={Admins}
             />
           </Switch>
         </UserProvider>

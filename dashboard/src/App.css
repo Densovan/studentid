@@ -866,13 +866,25 @@ tr.drop-over-upward td {
 }
 
 .jabarom-logo {
-  color: #5c26f6;
-  font-size: 40px;
+  color: #262e3c;
+  font-size: 29px;
   margin-top: -2px;
   font-weight: 900;
 }
+
 .pie-box {
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.05);
+}
+.card-student {
+  width: 25%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  /* display: block; */
+  /* margin: auto; */
+  margin-top: auto;
+  margin-top: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

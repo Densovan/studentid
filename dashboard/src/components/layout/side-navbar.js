@@ -58,13 +58,13 @@ const SideNavbar = () => {
           <Menu.Item key="/dashboard" icon={<AppstoreAddOutlined />}>
             <NavLink to="/dashboard">Dashboard</NavLink>
           </Menu.Item>
-          {/* <Menu.Item key="/dashboard/students" icon={<UserOutlined />}>
-            <NavLink to="/dashboard/students">Students</NavLink>
-          </Menu.Item> */}
+          <Menu.Item key="/dashboard/admins" icon={<UserOutlined />}>
+            <NavLink to="/dashboard/admins">Admins</NavLink>
+          </Menu.Item>
 
           <SubMenu key="blog" icon={<FormOutlined />} title="Students">
-            <Menu.Item key="dashboard/student/create">
-              <NavLink to="dashboard/student/create">Add Students</NavLink>
+            <Menu.Item key="/dashboard/student/create">
+              <NavLink to="/dashboard/student/create">Create Students</NavLink>
             </Menu.Item>
             <Menu.Item key="/dashboard/students">
               <NavLink to="/dashboard/students">Students</NavLink>

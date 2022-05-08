@@ -8,8 +8,10 @@ const UPDATE_STUDENT = gql`
     $oldPassword: String
     $password: String!
     $confirmPassword: String
+    $dob: String
   ) {
     update_student(
+      dob: $dob
       id: $id
       fullname: $fullname
       avatar: $avatar
@@ -60,6 +62,7 @@ const GET_STUDENTS = gql`
       dob
       created_at
       role
+      gender
     }
   }
 `;
@@ -75,6 +78,7 @@ const GET_STUDENT = gql`
       dob
       created_at
       role
+      gender
     }
   }
 `;
