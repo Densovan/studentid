@@ -173,14 +173,6 @@ const RootMutation = new GraphQLObjectType({
         studentId: { type: GraphQLString },
       },
       resolve: async (parent, args, context) => {
-        // const generateQR = async (text) => {
-        //   try {
-        //     console.log(await QRCode.toDataURL(text));
-        //   } catch (err) {
-        //     console.log(err);
-        //   }
-        // };
-        // generateQR("he");
         try {
           // Check Email
           const isEmail = await User.findOne({ email: args.email });
@@ -199,8 +191,12 @@ const RootMutation = new GraphQLObjectType({
           //work random ID
           const student = await User.find({});
           const students = student.map((res) => res.studentId);
-          const idd = Math.floor(Math.random() * (1000000000 - 1)) + 1;
-          if (students.includes(idd)) {
+          console.log(students);
+          const idd = (
+            Math.floor(Math.random() * (1000000000 - 1)) + 1
+          ).toString();
+          console.log(idd, "idd");
+          if (students.includes(`KH${999999999}`)) {
             return {
               message: "StudentID was Existed please created again!",
               statusCode: 400,
@@ -218,7 +214,7 @@ const RootMutation = new GraphQLObjectType({
             // qr: await QRCode.toDataURL("hel"),
           });
 
-          await newStudent.save();
+          // await newStudent.save();
           return { message: create("student"), statusCode: 200 };
         } catch (error) {
           throw new Error(error);
