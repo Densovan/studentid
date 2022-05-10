@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
-
+const qr = require("qrcode");
 const cors = require("cors");
 const app = express();
 const path = require("path");
@@ -44,6 +44,41 @@ app.use(Router);
 
 // ===== Connecte to the Database =====
 connectDatabase();
+// const generateQR = async (text) => {
+//   try {
+//     console.log(await qr.toDataURL(text));
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+// generateQR("http://imharshpatel.com");
+
+// let data = {
+//   id: 1,
+
+//   name: "User",
+
+//   email: "user@gmail.com",
+// };
+
+// let strData = JSON.stringify(data);
+
+// qr.toString(
+//   strData,
+//   { type: "terminal" },
+
+//   function (err, code) {
+//     if (err) return console.log("error occurred");
+
+//     console.log(code);
+//   }
+// );
+
+// qr.toDataURL(strData, function (err, code) {
+//   if (err) return console.log("error occurred");
+
+//   console.log(code);
+// });
 
 const PORT = 9001;
 app.listen(PORT, console.log(`Server Running on Port ${PORT}`));

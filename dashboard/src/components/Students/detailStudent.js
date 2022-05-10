@@ -3,6 +3,7 @@ import { DELETE_USER, GET_STUDENT } from "../../graphql/students";
 import { useMutation, useQuery } from "@apollo/client";
 import { useParams } from "react-router";
 import { Layout, Button, Avatar } from "antd";
+import { QRCode } from "react-qrcode-logo";
 
 const { Content } = Layout;
 const DetailStudent = () => {
@@ -17,7 +18,7 @@ const DetailStudent = () => {
     return "loading...";
   }
 
-  const { avatar, fullname, email, gender, dob } = data.student;
+  const { avatar, fullname, email, gender, dob, studentId } = data.student;
   const DeleteUser = (id) => {
     deleteUser({
       variables: { id },
@@ -37,7 +38,7 @@ const DetailStudent = () => {
           <br />
           <br />
           <p>
-            ID: <b>{id}</b>
+            ID: <b>{studentId}</b>
           </p>
           <p>
             Name: <b>{fullname}</b>
@@ -52,6 +53,7 @@ const DetailStudent = () => {
             gender: <b>{gender}</b>
           </p>
         </div>
+        <QRCode value={studentId} />,
       </Content>
       <br />
       <Button onClick={() => DeleteUser(id)} className="button-cancel">

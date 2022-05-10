@@ -65,7 +65,7 @@ const CreateStudent = () => {
     }).then(async (res) => {
       if (res.data.create_student.statusCode === "400") {
         await message.error(res.data.create_student.message, 3);
-      } else {
+      } else if (res.data.create_student.statusCode === "200") {
         setState({ imageUrl: null });
         await message.success(res.data.create_student.message, 3);
         form.resetFields();

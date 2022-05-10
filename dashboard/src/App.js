@@ -20,6 +20,7 @@ import Admins from "./components/admin/admins";
 import CreateAdmin from "./components/admin/createAdmin";
 import DetailAdmin from "./components/admin/detailAdmin";
 import EditAdmin from "./components/admin/editAdmin";
+import Test from "./components/test";
 
 axios.defaults.withCredentials = true;
 
@@ -82,6 +83,7 @@ function App() {
               path="/dashboard/admin/edit/:id"
               component={EditAdmin}
             />
+            <PrivateRoute exact={true} path="/test" component={Test} />
           </Switch>
         </UserProvider>
       </Router>

@@ -109,7 +109,7 @@ const Admins = () => {
   };
   const columns = [
     {
-      title: "Student ID",
+      title: "Admin ID",
       dataIndex: "id",
       key: "id",
       render: (data) => {
@@ -150,66 +150,6 @@ const Admins = () => {
       title: "Role",
       dataIndex: "role",
       key: "role",
-      //   render: (res, data) => {
-      //     const { id, role } = data;
-      //     return (
-      //       <div>
-      //         {role === "admin" && (
-      //           <Tag style={{ cursor: "pointer" }} color="green">
-      //             <Popconfirm
-      //               title="Are you sure to switch this user role?"
-      //               onConfirm={() => {
-      //                 switchRole({ variables: { id, role: "user" } })
-      //                   .then((res) => {
-      //                     if (res.data.switchRole.statusCode === "200") {
-      //                       return message.success(res.data.switchRole.message);
-      //                     } else if (res.data.switchRole.statusCode === "404") {
-      //                       return message.warning(res.data.switchRole.message);
-      //                     }
-      //                     refetch();
-      //                   })
-      //                   .catch((error) => {
-      //                     let err = JSON.parse(JSON.stringify(error));
-      //                     message.error(err.graphQLErrors[0].message);
-      //                   });
-      //               }}
-      //               okText="Yes"
-      //               cancelText="No"
-      //             >
-      //               Admin
-      //             </Popconfirm>
-      //           </Tag>
-      //         )}
-      //         {role === "user" && (
-      //           <Tag style={{ cursor: "pointer" }} color="gold">
-      //             <Popconfirm
-      //               title="Are you sure to switch this user role？"
-      //               onConfirm={() => {
-      //                 switchRole({ variables: { id, role: "admin" } })
-      //                   .then((res) => {
-      //                     message.success(res.data.switchRole.message);
-      //                     refetch();
-      //                   })
-      //                   .catch((error) => {
-      //                     let err = JSON.parse(JSON.stringify(error));
-      //                     message.error(err.graphQLErrors[0].message);
-      //                   });
-      //               }}
-      //               okText="Yes"
-      //               cancelText="No"
-      //             >
-      //               User
-      //             </Popconfirm>
-      //           </Tag>
-      //         )}
-      //         {role === "superadmin" && (
-      //           <Tag style={{ cursor: "pointer" }} color="magenta">
-      //             SuperAdmin
-      //           </Tag>
-      //         )}
-      //       </div>
-      //     );
-      //   },
     },
     {
       title: "Joined",

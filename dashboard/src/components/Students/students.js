@@ -110,7 +110,7 @@ const Users = () => {
   const columns = [
     {
       title: "Student ID",
-      dataIndex: "id",
+      dataIndex: "studentId",
       key: "id",
       render: (data) => {
         return <div>{data.substring(0, 7) + "..."}</div>;

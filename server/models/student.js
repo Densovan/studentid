@@ -5,7 +5,7 @@ const validateEmail = function (email) {
   return isEmail.test(email);
 };
 
-const UserSchema = new mongoose.Schema(
+const StudentSchema = new mongoose.Schema(
   {
     userId: {
       type: String,
@@ -56,6 +56,6 @@ const UserSchema = new mongoose.Schema(
   { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
 
-const User = mongoose.model("User", UserSchema);
+const Student = mongoose.model("Student", StudentSchema);
 
-module.exports = User;
+module.exports = Student;

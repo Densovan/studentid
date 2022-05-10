@@ -55,6 +55,7 @@ const GET_STUDENTS = gql`
     students {
       id
       fullname
+      studentId
       qr
       password
       email
@@ -70,6 +71,7 @@ const GET_STUDENT = gql`
   query ($id: String) {
     student(id: $id) {
       id
+      studentId
       fullname
       qr
       password

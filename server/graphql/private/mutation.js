@@ -2,12 +2,18 @@ require("dotenv").config();
 const graphql = require("graphql");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const QRCode = require("qrcode");
+const fs = require("fs");
 
 // ======== Models Section =========
 const User = require("../../models/user");
+const Test = require("../../models/test");
+const Student = require("../../models/student");
 
 // ======== Type Section =========
 const UserType = require("../types/users");
+const TestType = require("../types/test");
+const StudentType = require("../types/student");
 
 const {
   GraphQLObjectType,
@@ -18,9 +24,21 @@ const {
   GraphQLBoolean,
   GraphQLInputObjectType,
   GraphQLFloat,
+  GraphQLID,
 } = graphql;
 
 const { ACCESS_TOKEN_SECRET } = process.env;
+
+const opts = {
+  errorCorrectionLevel: "H",
+  type: "terminal",
+  quality: 0.95,
+  margin: 1,
+  color: {
+    dark: "#208698",
+    light: "#FFF",
+  },
+};
 
 const create = (message) => {
   return `This ${message} created with successfully`;
@@ -72,7 +90,7 @@ const RootMutation = new GraphQLObjectType({
             password: hashPassword,
           });
           await user.save();
-          return { message: create("admin") };
+          return { message: create("admin"), statusCode: 200 };
         } catch (error) {
           console.log(error);
           throw error;
@@ -152,31 +170,56 @@ const RootMutation = new GraphQLObjectType({
         dob: { type: GraphQLString },
         qr: { type: GraphQLString },
         avatar: { type: GraphQLString },
+        studentId: { type: GraphQLString },
       },
       resolve: async (parent, args, context) => {
+        // const generateQR = async (text) => {
+        //   try {
+        //     console.log(await QRCode.toDataURL(text));
+        //   } catch (err) {
+        //     console.log(err);
+        //   }
+        // };
+        // generateQR("he");
         try {
           // Check Email
           const isEmail = await User.findOne({ email: args.email });
-          return {
-            message: "An account with this email already exist.",
-            statusCode: 400,
-          };
+          if (isEmail) {
+            return {
+              message: "An account with this email already exist.",
+              statusCode: 400,
+            };
+          }
           if (args.password.length < 5) {
             return {
               message: "The password needs to be at least 5 characters long.",
               statusCode: 400,
             };
           }
+          //work random ID
+          const student = await User.find({});
+          const students = student.map((res) => res.studentId);
+          const idd = Math.floor(Math.random() * (1000000000 - 1)) + 1;
+          if (students.includes(idd)) {
+            return {
+              message: "StudentID was Existed please created again!",
+              statusCode: 400,
+            };
+          }
           // Hash the password
           const saltRounds = 10;
           const hashPassword = await bcrypt.hash(args.password, saltRounds);
+
           const newStudent = new User({
             ...args,
+            studentId: `KH${idd}`,
             userId: context.id,
             password: hashPassword,
+            // qr: await QRCode.toDataURL("hel"),
           });
+
           await newStudent.save();
-          return { message: create("student") };
+          return { message: create("student"), statusCode: 200 };
         } catch (error) {
           throw new Error(error);
         }
@@ -218,14 +261,14 @@ const RootMutation = new GraphQLObjectType({
     },
     // ===== User Section =====
     update_student: {
-      type: UserType,
+      type: StudentType,
       args: {
         id: { type: GraphQLString },
         fullname: { type: GraphQLString },
         avatar: { type: GraphQLString },
         gender: { type: GraphQLString },
         dob: { type: GraphQLString },
-        qr: { type: GraphQLString },
+        // qr: { type: GraphQLString },
         email: { type: GraphQLString },
         oldPassword: { type: GraphQLString },
         password: { type: GraphQLString },
@@ -328,6 +371,37 @@ const RootMutation = new GraphQLObjectType({
           return { message: "switch role successful", statusCode: 200 };
         } else {
           return { message: "You are not Superadmn", statusCode: 404 };
+        }
+      },
+    },
+
+    //=============test id=====================
+    create_test: {
+      type: TestType,
+      args: {
+        studentId: { type: GraphQLString },
+        name: { type: GraphQLString },
+      },
+      resolve: async (parent, args, context) => {
+        const student = await Test.find({});
+        const students = student.map((res) => res.studentId);
+        console.log(students);
+        try {
+          const idd = Math.floor(Math.random() * (1000000000 - 1)) + 1;
+          if (students.includes(idd))
+            return {
+              message: "StudentID was Existed please created again!",
+              statusCode: 400,
+            };
+          const test = new Test({
+            ...args,
+            studentId: `KH${idd}`,
+          });
+          await test.save();
+          return { message: "successfully" };
+        } catch (error) {
+          console.log(error);
+          throw error;
         }
       },
     },
