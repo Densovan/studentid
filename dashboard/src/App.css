@@ -893,3 +893,42 @@ tr.drop-over-upward td {
   margin-top: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+.ReactFlipCard {
+  font-family: "Comic Sans MS", "Courier New", sans-serif;
+  margin: 25px;
+}
+
+.ReactFlipCard,
+.ReactFlipCard__Front,
+.ReactFlipCard__Back {
+  width: 500px;
+  height: 225px;
+}
+
+.ReactFlipCard__Front,
+.ReactFlipCard__Back {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 25px;
+}
+
+.ReactFlipCard__Front {
+  background-color: #cec072;
+  /* background-color: #ffd399; */
+  /* background-color: #eee; */
+}
+
+.ReactFlipCard__Back {
+  /* background-color: #6caedd; */
+  background-color: #38a7c8;
+}
+
+.modal .ant-modal-content {
+  background-color: transparent;
+  box-shadow: none !important;
+}

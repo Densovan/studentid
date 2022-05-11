@@ -196,7 +196,7 @@ const RootMutation = new GraphQLObjectType({
             Math.floor(Math.random() * (1000000000 - 1)) + 1
           ).toString();
           console.log(idd, "idd");
-          if (students.includes(`KH${999999999}`)) {
+          if (students.includes(`KH${idd}`)) {
             return {
               message: "StudentID was Existed please created again!",
               statusCode: 400,
@@ -214,7 +214,7 @@ const RootMutation = new GraphQLObjectType({
             // qr: await QRCode.toDataURL("hel"),
           });
 
-          // await newStudent.save();
+          await newStudent.save();
           return { message: create("student"), statusCode: 200 };
         } catch (error) {
           throw new Error(error);

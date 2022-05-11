@@ -58,11 +58,11 @@ function App() {
               path="/dashboard/student/edit/:id"
               component={EditStudent}
             />
-            <PrivateRoute
+            {/* <PrivateRoute
               exact={true}
               path="/dashboard/student/details/:id"
               component={DetailStudent}
-            />
+            /> */}
             <PrivateRoute
               exact={true}
               path="/dashboard/admins"

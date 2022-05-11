@@ -4,6 +4,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useParams } from "react-router";
 import { Layout, Button, Avatar } from "antd";
 import { QRCode } from "react-qrcode-logo";
+import FlipCard from "react-flipcard-2";
 
 const { Content } = Layout;
 const DetailStudent = () => {
@@ -30,30 +31,34 @@ const DetailStudent = () => {
     <div>
       <Content>
         <h1 className="header-content">Student Details</h1>
-        <div className="card-student">
-          <Avatar
-            size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
-            src={`${avatar}`}
-          />
-          <br />
-          <br />
-          <p>
-            ID: <b>{studentId}</b>
-          </p>
-          <p>
-            Name: <b>{fullname}</b>
-          </p>
-          <p>
-            Date of Birth: <b>{dob}</b>
-          </p>
-          <p>
-            Email: <b>{email}</b>
-          </p>
-          <p>
-            gender: <b>{gender}</b>
-          </p>
-        </div>
-        <QRCode value={studentId} />,
+        <FlipCard>
+          <div>
+            <Avatar
+              size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+              src={`${avatar}`}
+            />
+            <br />
+            <br />
+            <p>
+              ID: <b>{studentId}</b>
+            </p>
+            <p>
+              Name: <b>{fullname}</b>
+            </p>
+            <p>
+              Date of Birth: <b>{dob}</b>
+            </p>
+            <p>
+              Email: <b>{email}</b>
+            </p>
+            <p>
+              gender: <b>{gender}</b>
+            </p>
+          </div>
+          <div>
+            <QRCode value={studentId} />
+          </div>
+        </FlipCard>
       </Content>
       <br />
       <Button onClick={() => DeleteUser(id)} className="button-cancel">

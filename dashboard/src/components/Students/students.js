@@ -1,8 +1,21 @@
 import React, { useState, useRef } from "react";
-import { Table, Layout, Spin, Input, Button, Space, Tag } from "antd";
+import {
+  Table,
+  Layout,
+  Spin,
+  Input,
+  Button,
+  Space,
+  Tag,
+  Modal,
+  Avatar,
+  Row,
+  Col,
+} from "antd";
+import FlipCard from "react-flipcard-2";
 import { Link } from "react-router-dom";
 import Highlighter from "react-highlight-words";
-// import { Link } from "react-router-dom";
+import { QRCode } from "react-qrcode-logo";
 import { SearchOutlined } from "@ant-design/icons";
 import { useMutation, useQuery } from "@apollo/react-hooks";
 import { GET_STUDENTS } from "../../graphql/students";
@@ -10,10 +23,21 @@ import moment from "moment";
 const { Content } = Layout;
 
 const Users = () => {
+  const [states, setStates] = useState(false);
+  const [fullname, setFullname] = useState("");
+  const [dob, setDob] = useState("");
+  const [gender, setGender] = useState("");
+  const [email, setEmail] = useState("");
+  const [studentId, setStudentId] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [state, setState] = useState({
     searchText: "",
     searchedColumn: "",
   });
+  const setModal = (event) => {
+    setStates(event);
+  };
+
   const searchInput = useRef(null);
 
   const { loading, data, refetch } = useQuery(GET_STUDENTS);
@@ -115,25 +139,9 @@ const Users = () => {
       render: (data) => {
         return <div>{data.substring(0, 7) + "..."}</div>;
       },
-      ...getColumnSearchProps("id"),
+      ...getColumnSearchProps("studentId"),
     },
-    // {
-    //   title: "Photo",
-    //   dataIndex: "avatar",
-    //   key: "avatar",
-    //   width: "15%",
-    //   render: (avatar) => {
-    //     return (
-    //       <img
-    //         style={{ borderRadius: "50px" }}
-    //         height="50px"
-    //         width="50px"
-    //         src={`${process.env.REACT_APP_SERVER}/public/avatar/${avatar}`}
-    //         alt="avatar"
-    //       />
-    //     );
-    //   },
-    // },
+
     {
       title: "Full Name",
       dataIndex: "fullname",
@@ -146,71 +154,7 @@ const Users = () => {
       key: "email",
       ...getColumnSearchProps("email"),
     },
-    // {
-    //   title: "Role",
-    //   dataIndex: "role",
-    //   key: "role",
-    //   render: (res, data) => {
-    //     const { id, role } = data;
-    //     return (
-    //       <div>
-    //         {role === "admin" && (
-    //           <Tag style={{ cursor: "pointer" }} color="green">
-    //             <Popconfirm
-    //               title="Are you sure to switch this user role?"
-    //               onConfirm={() => {
-    //                 switchRole({ variables: { id, role: "user" } })
-    //                   .then((res) => {
-    //                     if (res.data.switchRole.statusCode === "200") {
-    //                       return message.success(res.data.switchRole.message);
-    //                     } else if (res.data.switchRole.statusCode === "404") {
-    //                       return message.warning(res.data.switchRole.message);
-    //                     }
-    //                     refetch();
-    //                   })
-    //                   .catch((error) => {
-    //                     let err = JSON.parse(JSON.stringify(error));
-    //                     message.error(err.graphQLErrors[0].message);
-    //                   });
-    //               }}
-    //               okText="Yes"
-    //               cancelText="No"
-    //             >
-    //               Admin
-    //             </Popconfirm>
-    //           </Tag>
-    //         )}
-    //         {role === "user" && (
-    //           <Tag style={{ cursor: "pointer" }} color="gold">
-    //             <Popconfirm
-    //               title="Are you sure to switch this user role？"
-    //               onConfirm={() => {
-    //                 switchRole({ variables: { id, role: "admin" } })
-    //                   .then((res) => {
-    //                     message.success(res.data.switchRole.message);
-    //                     refetch();
-    //                   })
-    //                   .catch((error) => {
-    //                     let err = JSON.parse(JSON.stringify(error));
-    //                     message.error(err.graphQLErrors[0].message);
-    //                   });
-    //               }}
-    //               okText="Yes"
-    //               cancelText="No"
-    //             >
-    //               User
-    //             </Popconfirm>
-    //           </Tag>
-    //         )}
-    //         {role === "superadmin" && (
-    //           <Tag style={{ cursor: "pointer" }} color="magenta">
-    //             SuperAdmin
-    //           </Tag>
-    //         )}
-    //       </div>
-    //     );
-    //   },
-    // },
+
     {
       title: "Joined",
       dataIndex: "created_at",
@@ -223,12 +167,28 @@ const Users = () => {
       title: "Details",
       dataIndex: "id",
       key: "action",
-      render: (id) => {
+      render: (id, data) => {
+        const { studentId, fullname, avatar, dob, email, gender } = data;
+
         return (
           <React.Fragment>
-            <Link to={`/dashboard/student/details/${id}`}>
+            {/* <Link to={`/dashboard/student/details/${id}`}>
               <Tag color="#262e3c">View</Tag>
-            </Link>
+            </Link> */}
+            <Tag
+              onClick={async () => {
+                setModal(true);
+                setDob(dob);
+                setStudentId(studentId);
+                setFullname(fullname);
+                setEmail(email);
+                setGender(gender);
+                setAvatar(avatar);
+              }}
+              color="#262e3c"
+            >
+              View
+            </Tag>
 
             <Link to={`/dashboard/student/edit/${id}`}>
               <Tag color="#f16179">Edit</Tag>
@@ -243,7 +203,90 @@ const Users = () => {
     <React.Fragment>
       <Content>
         <div>
+          <Modal
+            className="modal"
+            width={500}
+            // title="Student Details"
+            centered
+            visible={states}
+            // onOk={() => setModal(false)}
+            onCancel={() => setModal(false)}
+            footer={null}
+            closeIcon={true}
+          >
+            <FlipCard>
+              <div>
+                <Row gutter={[12, 12]}>
+                  <Col sm={7}>
+                    <Avatar
+                      size={{
+                        xs: 24,
+                        sm: 32,
+                        md: 40,
+                        lg: 64,
+                        xl: 80,
+                        xxl: 100,
+                      }}
+                      src={`${avatar}`}
+                    />
+                  </Col>
+                  <Col sm={17}>
+                    <p>
+                      ID: <b>{studentId}</b>
+                    </p>
+                    <p>
+                      Name: <b>{fullname}</b>
+                    </p>
+                    <p>
+                      Date of Birth: <b>{dob}</b>
+                    </p>
+                    <p>
+                      Email: <b>{email}</b>
+                    </p>
+                    <p>
+                      gender: <b>{gender}</b>
+                    </p>
+                  </Col>
+                </Row>
+              </div>
+              <div>
+                {/* <Row>
+                  <Col sm={7}>
+                    <img
+                      style={{ maxWidth: "60%", borderRadius: "50%" }}
+                      src="/images/logokompinavy.png"
+                    />
+                  </Col>
+                  <Col style={{ marginTop: "23px" }} sm={17}>
+                    <h4> Power By KOOMPI</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm={7}>
+                    <Avatar
+                      size={{
+                        xs: 24,
+                        sm: 32,
+                        md: 40,
+                        lg: 64,
+                        xl: 80,
+                        xxl: 100,
+                      }}
+                      src="/images/logokompinavy.png"
+                    />
+                  </Col>
+                  <Col sm={17}>Power By KOOMI</Col>
+                </Row> */}
+                <center>
+                  <h3>Scan QRCode</h3>
+
+                  <QRCode size={100} value={studentId} />
+                </center>
+              </div>
+            </FlipCard>
+          </Modal>
           <h1 className="header-content">Users Table</h1>
+
           <Table columns={columns} dataSource={data.students} />
         </div>
       </Content>
