@@ -185,7 +185,7 @@ const CreateAdmin = () => {
                     className="avatar-uploader"
                     showUploadList={false}
                     // action={`${process.env.REACT_APP_SERVER}/upload/image`}
-                    action="http://localhost:9001/upload/image"
+                    action="https://id.saladigital.org/upload/image"
                     // beforeUpload={beforeUpload}
                     onChange={handleChange}
                   >

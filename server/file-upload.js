@@ -27,8 +27,8 @@ router.post("/upload/image", upload.single("thumbnail"), async (req, res) => {
     .webp({ quality: 20 })
     .toFile("./public/uploads/" + ref);
   return res.json({
-    // imageUrl: `https://backend.sdacharn.com/public/uploads/${ref}`,
-    imageUrl: `http://localhost:7001/public/uploads/${ref}`,
+    imageUrl: `https://id.saladigital.org/public/uploads/${ref}`,
+    // imageUrl: `http://localhost:7001/public/uploads/${ref}`,
   });
 });
 

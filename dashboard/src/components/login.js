@@ -14,7 +14,7 @@ export default function Login() {
   const onFinish = (values) => {
     setLoading(true);
     axios
-      .post("http://localhost:9001/login", { ...values }, config)
+      .post("https://id.saladigital.org/login", { ...values }, config)
       .then(async (res) => {
         if (res.data.role === "admin" || "superadmin") {
           await message.success(res.data.message, 3);

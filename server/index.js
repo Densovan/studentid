@@ -22,6 +22,8 @@ app.use(
       "http://localhost:3001",
       "http://localhost:5000",
       "https://dashboard.sdacharn.com",
+      "http://localhost:9002",
+      "https://www.saladigital.org",
     ],
     credentials: true,
   })

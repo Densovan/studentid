@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
 
   const verifyToken = async () => {
     await axios
-      .get(`http://localhost:9001/token/verify`, {
+      .get(`https://id.saladigital.org/token/verify`, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       })
