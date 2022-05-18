@@ -205,7 +205,7 @@ const Users = () => {
         <div>
           <Modal
             className="modal"
-            width={500}
+            width={550}
             // title="Student Details"
             centered
             visible={states}
@@ -214,43 +214,69 @@ const Users = () => {
             footer={null}
             closeIcon={true}
           >
-            <FlipCard>
-              <div>
-                <Row gutter={[12, 12]}>
-                  <Col sm={7}>
-                    <Avatar
-                      size={{
-                        xs: 24,
-                        sm: 32,
-                        md: 40,
-                        lg: 64,
-                        xl: 80,
-                        xxl: 100,
-                      }}
-                      src={`${avatar}`}
+            {/* <FlipCard> */}
+            <div>
+              <Row gutter={[8, 8]}>
+                <Col sm={7}>
+                  <Avatar
+                    size={{
+                      xs: 24,
+                      sm: 32,
+                      md: 40,
+                      lg: 64,
+                      xl: 80,
+                      xxl: 100,
+                    }}
+                    src={`${avatar}`}
+                  />
+                </Col>
+                <Col sm={10}>
+                  <p>
+                    ID: <b>{studentId}</b>
+                  </p>
+                  <p>
+                    Name: <b>{fullname}</b>
+                  </p>
+                  <p>
+                    Date of Birth: <b>{dob}</b>
+                  </p>
+                  <p>
+                    Email: <b>{email}</b>
+                  </p>
+                  <p>
+                    gender: <b>{gender}</b>
+                  </p>
+                </Col>
+                <Col sm={7}>
+                  <br />
+
+                  <center>
+                    <QRCode
+                      fgColor="#38424c"
+                      quietZone={20}
+                      qrStyle="squares"
+                      // logoImage="/images/index.png"
+                      logoOpacity={0.7}
+                      logoHeight={50}
+                      logoWidth={50}
+                      eyeRadius={[
+                        {
+                          // top/left eye
+                          outer: [10, 10, 0, 10],
+                          inner: [0, 10, 10, 10],
+                        },
+                        [10, 10, 10, 0], // top/right eye
+                        [10, 0, 10, 10], // bottom/left
+                      ]}
+                      size={100}
+                      value={studentId}
                     />
-                  </Col>
-                  <Col sm={17}>
-                    <p>
-                      ID: <b>{studentId}</b>
-                    </p>
-                    <p>
-                      Name: <b>{fullname}</b>
-                    </p>
-                    <p>
-                      Date of Birth: <b>{dob}</b>
-                    </p>
-                    <p>
-                      Email: <b>{email}</b>
-                    </p>
-                    <p>
-                      gender: <b>{gender}</b>
-                    </p>
-                  </Col>
-                </Row>
-              </div>
-              <div>
-                {/* <Row>
+                  </center>
+                </Col>
+              </Row>
+            </div>
+            <div>
+              {/* <Row>
                   <Col sm={7}>
                     <img
                       style={{ maxWidth: "60%", borderRadius: "50%" }}
@@ -277,13 +303,8 @@ const Users = () => {
                   </Col>
                   <Col sm={17}>Power By KOOMI</Col>
                 </Row> */}
-                <center>
-                  <h3>Scan QRCode</h3>
-
-                  <QRCode size={100} value={studentId} />
-                </center>
-              </div>
-            </FlipCard>
+            </div>
+            {/* </FlipCard> */}
           </Modal>
           <h1 className="header-content">Users Table</h1>
 

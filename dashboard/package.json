@@ -16,6 +16,8 @@
     "axios-case-converter": "^0.9.0",
     "chart.js": "^3.7.1",
     "chokidar": "^3.5.1",
+    "dotenv": "^16.0.1",
+    "env-cmd": "^10.1.0",
     "graphql": "^15.5.0",
     "immutability-helper": "^3.1.1",
     "js-cookie": "^2.2.1",
@@ -43,7 +45,9 @@
     "start": "PORT=9002 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:testing": "PORT=9002 env-cmd -f .env react-scripts build",
+    "build:staging": "PORT=9002 env-cmd -f .env react-scripts build"
   },
   "eslintConfig": {
     "extends": [

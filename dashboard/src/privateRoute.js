@@ -10,12 +10,16 @@ import axios from "axios";
 
 const { Content } = Layout;
 
+const { REACT_APP_LOCAL, REACT_APP_PRO } = process.env;
+const apiUrl =
+  process.env.NODE_ENV === "production" ? REACT_APP_PRO : REACT_APP_LOCAL;
+
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const [isLogin, setIsLogin] = React.useState("");
 
   const verifyToken = async () => {
     await axios
-      .get(`https://id.saladigital.org/token/verify`, {
+      .get(`${apiUrl}/token/verify`, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       })

@@ -9,12 +9,16 @@ const config = {
   withCredentials: true,
 };
 
+const { REACT_APP_LOCAL, REACT_APP_PRO } = process.env;
+const apiUrl =
+  process.env.NODE_ENV === "production" ? REACT_APP_PRO : REACT_APP_LOCAL;
+
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const onFinish = (values) => {
     setLoading(true);
     axios
-      .post("https://id.saladigital.org/login", { ...values }, config)
+      .post(`${apiUrl}/login`, { ...values }, config)
       .then(async (res) => {
         if (res.data.role === "admin" || "superadmin") {
           await message.success(res.data.message, 3);

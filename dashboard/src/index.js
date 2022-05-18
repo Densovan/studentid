@@ -6,9 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 
 import { ApolloProvider } from "@apollo/react-hooks";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+const { REACT_APP_LOCAL, REACT_APP_PRO } = process.env;
+const apiUrl =
+  process.env.NODE_ENV === "production" ? REACT_APP_PRO : REACT_APP_LOCAL;
 
 const client = new ApolloClient({
-  uri: `https://id.saladigital.org/admin`,
+  // uri: `https://id.saladigital.org/admin`,
+  uri: `${apiUrl}/admin`,
   credentials: "include",
   cache: new InMemoryCache(),
 });

@@ -2,6 +2,11 @@ import React, { createContext, useEffect } from "react";
 import axios from "axios";
 import { Redirect } from "react-router";
 
+const { REACT_APP_LOCAL, REACT_APP_PRO } = process.env;
+const apiUrl =
+  process.env.NODE_ENV === "production" ? REACT_APP_PRO : REACT_APP_LOCAL;
+
+console.log(apiUrl);
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
@@ -11,7 +16,7 @@ export const UserProvider = ({ children }) => {
 
   const verifyToken = async () => {
     await axios
-      .get(`https://id.saladigital.org/token/verify`, {
+      .get(`${apiUrl}/token/verify`, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       })
